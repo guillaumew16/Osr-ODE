@@ -6,6 +6,8 @@ from sympy.abc import F, z, s
 # s     -   timestep
 # z     -   variable
 
+# F = sym.Function('F')(z)
+
 class DTA:
     def __init__(self, upd):
         super().__init__()
@@ -89,6 +91,7 @@ class DTA:
 
         return ODE_coeff_funs
 
+# Note: in the paper they use -F instead of F
 GDA = DTA("z + s * F(z)")
 EGM = DTA("z + s * F( z + s * F(z) )")
 
